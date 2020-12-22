@@ -1,0 +1,4 @@
+<odoo>
+    <menuitem id="hospital_root"  name="Hospital"/>
+    <menuitem id="hospital_patient" name="Patient" parent="hospital_root"/>
+</odoo>
