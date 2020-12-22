@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "custom/om_university",
+    'name': "University Management",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -24,9 +24,11 @@
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/student.xml',
+        'data/sequence.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

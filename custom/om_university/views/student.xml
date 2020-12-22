@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <!--tree view of the student model-->
+    <record id="student_tree" model="ir.ui.view">
+        <field name="name">university.student.tree</field>
+        <field name="model">university.student</field>
+        <field name="arch" type="xml">
+            <tree string="Students list">
+                <field name="name_seq"/>
+                <field name="st_name"/>
+                <field name="st_email"/>
+                <field name="st_department"/>
+                <field name="st_batch"/>
+                <field name="st_age"/>
+            </tree>
+        </field>
+     </record>
+
+     <record id="student_form" model="ir.ui.view">
+        <field name="name">university.student.form</field>
+        <field name="model">university.student</field>
+        <field name="arch" type="xml">
+            <form strin="Students">
+                <sheet>
+                 <group>
+                     <field name="st_image" widget="image" style="width: 50px; height: 50px;"/>
+                 </group>
+                 <group>
+                     <group>
+                          <field name="name_seq"/>
+                          <field name="st_name"/>
+                          <field name="st_age"/>
+                          <field name="st_email"/>
+                     </group>
+                     <group>
+                         <field name="st_department"/>
+                         <field name="st_batch"/>
+                         <field name="st_notes"/>
+                     </group>
+                </group>
+            </sheet>
+            </form>
+        </field>
+     </record>
+
+
+
+
+
+      <!--action of the students menu-->
+    <record id="action_student" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">university.student</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="o_view_nocontent_smiling_face">
+            Create your First Student !
+          </p>
+        </field>
+    </record>
+    <menuitem id="university_root"  name="University" sequence="1" web_icon="om_student,static/description/icon.png"/>
+    <menuitem id="university_student" name="Student" parent="university_root" action="action_student" sequence="10"/>
+</odoo>
